@@ -4,9 +4,12 @@ MAINTAINER Selim BENSENOUCI "selim@openlinux.fr"
 
 RUN yum update -y
 
-RUN yum install openssh net-tools vim unzip rsync -y
+RUN yum install openssh wget net-tools vim unzip rsync -y
 RUN echo 'root:toor' | chpasswd
-RUN 
+RUN yum -y install openssh-server epel-release && \
+    yum -y install pwgen && \
+	ssh-keygen -A && \
+    sed -i "s/#UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config
 
 EXPOSE  22
 CMD ["/usr/sbin/sshd", "-D"]
