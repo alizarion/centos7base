@@ -11,4 +11,4 @@ RUN rm -f jdk-7u79-linux-x64.rpm
 RUN sh -c "echo export JAVA_HOME=/usr/java/jdk1.7.0_79/jre >> /etc/environment"
 
 # Define default command.
-CMD ["bash"]
+#CMD ["bash"]
