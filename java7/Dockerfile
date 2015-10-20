@@ -9,5 +9,6 @@ RUN wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2
 RUN yum -y localinstall jdk-7u79-linux-x64.rpm
 RUN rm -f jdk-7u79-linux-x64.rpm
 ENV JAVA_HOME /usr/java/jdk1.7.0_79/jre
+ENV PATH $JAVA_HOME/bin:$PATH
 # Define default command.
 CMD ["bash"]
