@@ -39,4 +39,5 @@ RUN set -x \
 	&& rm tomcat.tar.gz*
 
 EXPOSE 8080
+VOLUME ["/opt/tomcat7"]
 CMD ["catalina.sh", "run"]
