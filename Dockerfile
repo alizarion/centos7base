@@ -6,7 +6,7 @@ RUN yum update -y
 
 RUN yum install openssh wget net-tools vim unzip rsync -y
 RUN echo 'root:toor' | chpasswd
-RUN yum -y install openssh-server epel-release && \
+RUN yum -y install curl openssh-server epel-release && \
     yum -y install pwgen && \
 	ssh-keygen -A && \
     sed -i "s/#UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config
