@@ -10,6 +10,6 @@ RUN yum -y install curl openssh-server epel-release && \
     yum -y install pwgen && \
 	ssh-keygen -A && \
     sed -i "s/#UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config
-
+VOLUME ["/var/log"]
 EXPOSE  22
 CMD ["/usr/sbin/sshd", "-D"]
