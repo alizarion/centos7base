@@ -40,8 +40,8 @@ RUN set -x \
 ADD create_tomcat_admin_user.sh /create_tomcat_admin_user.sh
 ADD config.sh /config.sh
 RUN chmod +x /*.sh
-RUN /config.sh
 EXPOSE 8080
 VOLUME ["/opt/tomcat7/logs"]
 VOLUME ["/opt/tomcat7/webapps"]
+CMD ["/config.sh"]
 CMD ["catalina.sh", "run"]
