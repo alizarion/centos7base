@@ -37,7 +37,11 @@ RUN set -x \
 	&& tar -xvf tomcat.tar.gz --strip-components=1 \
 	&& rm bin/*.bat \
 	&& rm tomcat.tar.gz*
-
+ADD create_tomcat_admin_user.sh /create_tomcat_admin_user.sh
+ADD config.sh /config.sh
+RUN chmod +x /*.sh
+RUN ./config.sh
 EXPOSE 8080
-VOLUME ["/opt/tomcat7"]
+VOLUME ["/opt/tomcat7/logs"]
+VOLUME ["/opt/tomcat7/webapps"]
 CMD ["catalina.sh", "run"]
