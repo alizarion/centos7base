@@ -43,5 +43,4 @@ RUN chmod +x /*.sh
 EXPOSE 8080
 VOLUME ["/opt/tomcat7/logs"]
 VOLUME ["/opt/tomcat7/webapps"]
-CMD ["/config.sh"]
-CMD ["catalina.sh", "run"]
+CMD ["/run.sh"]
