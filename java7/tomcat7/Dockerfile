@@ -38,7 +38,7 @@ RUN set -x \
 	&& rm bin/*.bat \
 	&& rm tomcat.tar.gz*
 ADD create_tomcat_admin_user.sh /create_tomcat_admin_user.sh
-ADD config.sh /config.sh
+ADD run.sh /run.sh
 RUN chmod +x /*.sh
 EXPOSE 8080
 VOLUME ["/opt/tomcat7/logs"]
