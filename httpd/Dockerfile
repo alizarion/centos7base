@@ -10,6 +10,7 @@ RUN yum clean all
 ADD httpd-foreground /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/httpd-foreground
+RUN rm -rf /etc/httpd/logs
 RUN mkdir /etc/httpd/logs
 
 EXPOSE 80
