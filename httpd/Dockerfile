@@ -3,7 +3,7 @@ FROM alizarion/centos7base:latest
 MAINTAINER Selim BENSENOUCI "selim@openlinux.fr"
 
 RUN yum update -y
-RUN yum -y httpd mod_auth_openid
+RUN yum -y install httpd mod_auth_openid
 
 RUN yum clean all
 
