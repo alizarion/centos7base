@@ -6,11 +6,11 @@
 # NOTE: if this file is removed, it will be restored on upgrades.
 #
 #LoadModule auth_openidc_module ../modules/mod_auth_openidc.so
-OIDCProviderMetadataURL http://10.0.2.15:32770/auth/realms/master/.well-known/openid-configuration
-OIDCClientID mod_openidc_text
-OIDCClientSecret bc4ddc58-1f71-4de6-b633-8e0a3eb35b6c
+OIDCProviderMetadataURL %OIDCProviderMetadataURL%
+OIDCClientID %OIDCClientID%
+OIDCClientSecret %OIDCClientSecret%
 
-OIDCRedirectURI https://10.0.2.15:9090/
+OIDCRedirectURI %OIDCRedirectURI%
 OIDCCryptoPassphrase toto
 
 <Location />
