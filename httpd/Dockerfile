@@ -3,7 +3,11 @@ FROM alizarion/centos7base:latest
 MAINTAINER Selim BENSENOUCI "selim@openlinux.fr"
 
 RUN yum update -y
-RUN yum -y install httpd mod_auth_openid
+RUN cd /tmp \ 
+  wget https://github.com/pingidentity/mod_auth_openidc/releases/download/v1.8.6/mod_auth_openidc-1.8.6-1.el7.centos.x86_64.rpm 
+    
+RUN yum -y install httpd \ 
+    mod_auth_openidc-1.8.6-1.el7.centos.x86_64.rpm 
 
 RUN yum clean all
 
