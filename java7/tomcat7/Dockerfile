@@ -44,4 +44,5 @@ EXPOSE 8080
 RUN yum clean all
 VOLUME ["/opt/tomcat7/logs"]
 VOLUME ["/opt/tomcat7/webapps"]
-CMD ["/run.sh"]
+RUN cd /
+CMD ["sh /run.sh"]
