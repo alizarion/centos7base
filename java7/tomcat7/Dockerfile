@@ -45,4 +45,4 @@ RUN yum clean all
 VOLUME ["/opt/tomcat7/logs"]
 VOLUME ["/opt/tomcat7/webapps"]
 RUN cd /
-CMD ["./run.sh"]
+CMD  /opt/tomcat/bin/catalina.sh run
