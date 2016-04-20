@@ -5,8 +5,5 @@ batch
 /subsystem=datasources/jdbc-driver=mysql:add(driver-name=mysql,driver-module-name=com.mysql.jdbc,driver-xa-datasource-class-name=com.mysql.jdbc.jdbc2.optional.MysqlXADataSource)
 /subsystem=datasources/jdbc-driver=oracle:add(driver-name=oracle,driver-module-name=com.oracle,driver-xa-datasource-class-name=oracle.jdbc.driver.OracleDriver)
 
-# Add the datasource
-data-source add --name=InvoicesDS --driver-name=oracle --jndi-name=java:jboss/datasources/InvoicesDS --connection-url=jdbc:oracle:thin:@tstsupor1102:1521:oraim11 --user-name=T2_DGE_SP262b --password=T2_DGE_SP262b --use-ccm=false --max-pool-size=25 --blocking-timeout-wait-millis=5000 --enabled=true
-
 # Execute the batch
 run-batch
