@@ -16,7 +16,6 @@ ADD modules /opt/jboss/wildfly/modules/
 
 # Expose the ports we're interested in
 EXPOSE 8080 9990
+RUN chmod +x /opt/jboss/wildfly/customization/execute.sh
 RUN /opt/jboss/wildfly/customization/execute.sh
-# Set the default command to run on boot
-# This will boot WildFly in the standalone mode and bind to all interface
-CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0"]
+
