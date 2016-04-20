@@ -16,6 +16,7 @@ ADD modules /opt/jboss/wildfly/modules/
 
 # Expose the ports we're interested in
 EXPOSE 8080 9990
+
 RUN chmod +x /opt/jboss/wildfly/customization/execute.sh
 RUN /opt/jboss/wildfly/customization/execute.sh
 
