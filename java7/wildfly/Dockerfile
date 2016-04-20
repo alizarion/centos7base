@@ -11,9 +11,12 @@ RUN cd $HOME && curl http://download.jboss.org/wildfly/$WILDFLY_VERSION/wildfly-
 # Set the JBOSS_HOME env variable
 ENV JBOSS_HOME /opt/jboss/wildfly
 
+ADD customization /opt/jboss/wildfly/customization/
+ADD modules /opt/jboss/wildfly/modules/
+
 # Expose the ports we're interested in
 EXPOSE 8080 9990
-
+RUN /opt/jboss/wildfly/customization/execute.sh
 # Set the default command to run on boot
 # This will boot WildFly in the standalone mode and bind to all interface
 CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0"]
