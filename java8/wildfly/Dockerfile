@@ -1,5 +1,5 @@
 # Use latest  image as the base
-FROM alizarion/centos7java7
+FROM alizarion/centos7java8
 
 # Set the WILDFLY_VERSION env variable
 ENV WILDFLY_VERSION 8.1.0.Final
