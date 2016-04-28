@@ -16,7 +16,7 @@ RUN cd $HOME && curl http://download.jboss.org/wildfly/$WILDFLY_VERSION/wildfly-
 ENV JBOSS_HOME /opt/jboss/wildfly
 
 ADD customization /opt/jboss/wildfly/customization/
-ADD modules /opt/jboss/wildfly/modules/
+ADD modules/com /opt/jboss/wildfly/modules/system/layers/base/
 
 # Expose the ports we're interested in
 EXPOSE 8080 9990
