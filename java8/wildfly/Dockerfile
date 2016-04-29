@@ -2,7 +2,7 @@
 FROM alizarion/centos7java8
 
 # Set the WILDFLY_VERSION env variable
-ENV WILDFLY_VERSION 8.1.0.Final
+ENV WILDFLY_VERSION 8.2.0.Final
 
 ENV HOME /opt/jboss
 
